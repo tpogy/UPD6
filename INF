@@ -1,0 +1,474 @@
+task.wait(20)
+game:GetService("Players").LocalPlayer.Idled:connect(
+    function()
+        game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+    end
+)
+
+local function buymerchant()
+    if game.Players.LocalPlayer.Name == "GoDzBuLLeT" then
+        for i, v in next, game:GetService("Workspace")["travelling_merchant"]:GetChildren() do
+            if v.Name == "stand" then
+                for x, h in next, game:GetService("Workspace")["travelling_merchant"].stand.items:GetChildren() do
+                    local stritem = tostring(h)
+                    item = string.gsub(stritem, "%d+", "")
+                    if item == "star_remnant" then
+                        local args = {
+                            [1] = stritem
+                        }
+
+                        game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_travelling_merchant_item:InvokeServer(
+                            unpack(args)
+                        )
+                    end
+                end
+            end
+        end
+    end
+end
+
+local function join() -- join teleporter
+    local args = {
+        [1] = "_lobbytemplategreen6"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
+end
+
+local function joinnamek() -- join teleporter
+    local args = {
+        [1] = "_lobbytemplategreen7"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
+end
+
+local function Create() -- Creates the map
+    local args = {
+        [1] = "_lobbytemplategreen6",
+        [2] = "magnolia_infinite",
+        [3] = true,
+        [4] = "Hard"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_level:InvokeServer(unpack(args))
+end
+
+local function Createnamek() -- Creates the map
+    local args = {
+        [1] = "_lobbytemplategreen7",
+        [2] = "namek_infinite",
+        [3] = true,
+        [4] = "Hard"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_level:InvokeServer(unpack(args))
+end
+
+local function start2() -- Starts the teleport
+    local args = {
+        [1] = "_lobbytemplategreen6"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_game:InvokeServer(unpack(args))
+end
+
+local function startnamek() -- Starts the teleport
+    local args = {
+        [1] = "_lobbytemplategreen7"
+    }
+
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_game:InvokeServer(unpack(args))
+end
+
+local function diseff()
+    if game:GetService("Players").LocalPlayer["_settings"]["low_quality_textures"].Value == false then
+        game:GetService("Players").LocalPlayer["_settings"]["low_quality_textures"].Value = true
+    end
+    if game:GetService("Players").LocalPlayer["_settings"]["disable_effects"].Value == false then
+        game:GetService("Players").LocalPlayer["_settings"]["disable_effects"].Value = true
+    end
+    if game:GetService("Players").LocalPlayer["_settings"]["disable_kill_fx"].Value == false then
+        game:GetService("Players").LocalPlayer["_settings"]["disable_kill_fx"].Value = true
+    end
+end
+
+local function start() -- starts the game
+    task.wait(0.5)
+    if game:GetService("Workspace")["_wave_num"].Value < 1 then
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+    end
+end
+
+local function placenamek()
+    if
+        game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose and
+            game.Players.LocalPlayer["_stats"].resource.Value >= 500
+     then
+        local args = {
+            [1] = getgenv().id7,
+            [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id7,
+            [2] = CFrame.new(-2948.78027, 91.80620574951172, -700.842041) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id7,
+            [2] = CFrame.new(-2948.72803, 91.80620574951172, -703.189758) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id7,
+            [2] = CFrame.new(-2948.80151, 91.80620574951172, -705.302307) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+    end
+end
+
+local function place()
+    if
+        game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose and
+            game.Players.LocalPlayer["_stats"].resource.Value >= 500
+     then
+        local args = {
+            [1] = getgenv().id1,
+            [2] = CFrame.new(351.872559, 121.93, -70.3448257) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id2,
+            [2] = CFrame.new(347.958435, 121.93, -70.0713806) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id2,
+            [2] = CFrame.new(344.544312, 121.93, -69.8057556) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id2,
+            [2] = CFrame.new(340.817688, 121.93, -69.7745056) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id3,
+            [2] = CFrame.new(379.02829, 121.93, -106.611771) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id3,
+            [2] = CFrame.new(379.077789, 121.93, -103.893845) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id3,
+            [2] = CFrame.new(379.107727, 121.93, -101.026985) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id4,
+            [2] = CFrame.new(364.450714, 121.93, -87.7618484) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id4,
+            [2] = CFrame.new(364.442932, 121.93, -85.176712) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id4,
+            [2] = CFrame.new(364.444702, 121.93, -82.6162415) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id5,
+            [2] = CFrame.new(358.623657, 121.93, -87.4695206) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id5,
+            [2] = CFrame.new(358.537323, 121.93, -84.5441055) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id5,
+            [2] = CFrame.new(358.504608, 121.93, -81.4460373) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id6,
+            [2] = CFrame.new(365.411835, 121.93, -93.0482941) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id6,
+            [2] = CFrame.new(362.489899, 121.93, -93.3451843) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id6,
+            [2] = CFrame.new(359.396118, 121.93, -93.3139343) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+    end
+end
+
+local function upgradefarm()
+    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+        if
+            v.Name == "bulma" or v.Name == "speedwagon" or v.Name == "bulma:shiny" or v.Name == "speedwagon:shiny" or
+                v.Name == "erwin"
+         then
+            if v._stats.upgrade.Value < 20 then
+                local args = {
+                    [1] = v
+                }
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.upgrade_unit_ingame:InvokeServer(
+                    unpack(args)
+                )
+            end
+        end
+    end
+end
+
+local function upgrade()
+    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+        if
+            v.Name == getgenv().unit1 or v.Name == getgenv().unit2 or v.Name == getgenv().unit3 or
+                v.Name == getgenv().unit4 or
+                v.Name == getgenv().unit5 or
+                v.Name == getgenv().unit6 or
+                v.Name == getgenv().unit7
+         then
+            if v._stats.upgrade.Value < 20 then
+                local args = {
+                    [1] = v
+                }
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.upgrade_unit_ingame:InvokeServer(
+                    unpack(args)
+                )
+            end
+        end
+    end
+end
+
+local function useskill()
+    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+        if v.Name == "erwin" then
+            local args = {
+                [1] = v
+            }
+
+            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(unpack(args))
+        end
+    end
+end
+
+local function Hit_ice()
+    for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+        if v.Name == "akainu" then
+            v["_stats"].priority.Value = "strongest"
+        end
+    end
+end
+
+local function sell()
+    if game:GetService("Workspace")["_wave_num"].Value >= getgenv().wavetolose then
+        for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+            if
+                v.Name == getgenv().unit1 or v.Name == getgenv().unit2 or v.Name == getgenv().unit3 or
+                    v.Name == getgenv().unit4 or
+                    v.Name == getgenv().unit5 or
+                    v.Name == getgenv().unit6 or
+                    v.Name == getgenv().unit7
+             then
+                local args = {
+                    [1] = v
+                }
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(
+                    unpack(args)
+                )
+            end
+        end
+    end
+end
+
+local function sellnamek()
+    if game:GetService("Workspace")["_wave_num"].Value >= getgenv().wavetolosenamek then
+        for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+            if
+                v.Name == getgenv().unit1 or v.Name == getgenv().unit2 or v.Name == getgenv().unit3 or
+                    v.Name == getgenv().unit4 or
+                    v.Name == getgenv().unit5 or
+                    v.Name == getgenv().unit6 or
+                    v.Name == getgenv().unit7
+             then
+                local args = {
+                    [1] = v
+                }
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(
+                    unpack(args)
+                )
+            end
+        end
+    end
+end
+
+local function teleport()
+    if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
+        task.wait(2)
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
+    end
+end
+
+local function webhook()
+    if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
+        task.wait(6)
+        local req = syn.request
+        local data = {
+            ["content"] = "",
+            ["embeds"] = {
+                {
+                    ["title"] = "**Anime Adventures INF**",
+                    ["description"] = "Username: " ..
+                        game:GetService("Players").LocalPlayer.Name ..
+                            "\nLost on wave: " ..
+                                game:GetService("Workspace")["_wave_num"].Value ..
+                                    "\nAmount of Gems Earned: " ..
+                                        game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.GoldGemXP.GemReward.Main.Amount.Text ..
+                                            "\n" ..
+                                                game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text ..
+                                                    "\nTotal Gems: " ..
+                                                        game:GetService("Players").LocalPlayer["_stats"]["gem_amount"].Value ..
+                                                            ""
+                }
+            }
+        }
+
+        local res =
+            req {
+            Url = getgenv().url,
+            Method = "POST",
+            Body = game:GetService("HttpService"):JSONEncode(data),
+            Headers = {
+                ["Content-Type"] = "application/json"
+            }
+        }
+
+        print(res)
+    end
+end
+
+if game.PlaceId == 8304191830 then
+    if game.Players.LocalPlayer.Name == getgenv().farmgems1 then
+        while true do
+            task.wait(5)
+            joinnamek()
+            task.wait(1)
+            Createnamek()
+            task.wait(1)
+            startnamek()
+            task.wait(1)
+        end
+    else
+        while true do
+            task.wait(5)
+            buymerchant()
+            task.wait(1)
+            join()
+            task.wait(1)
+            Create()
+            task.wait(1)
+            start2()
+            task.wait(1)
+        end
+    end
+elseif game.PlaceId == 8349889591 then
+    repeat
+        wait()
+    until game:IsLoaded()
+    task.wait(15) -- Waits for the game remotes to load (This is needed)
+    game.Players.LocalPlayer.PlayerGui.MessageGui.Enabled = false -- Removes the annoying error messages
+
+    if game.Players.LocalPlayer.Name == getgenv().farmgems1 then
+        while true do
+            task.wait()
+            diseff()
+            start()
+            placenamek()
+            upgrade()
+            sellnamek()
+            webhook()
+            teleport()
+        end
+    else
+        while true do
+            task.wait()
+            diseff()
+            start()
+            place()
+            upgradefarm()
+            if game.Players.LocalPlayer["_stats"].resource.Value >= 8000 then
+                break
+            end
+        end
+        task.wait(1)
+
+        repeat
+            upgrade()
+            task.wait(0.3)
+        until game:GetService("Workspace")["_wave_num"].Value >= getgenv().wavetolose or
+            game:GetService("Workspace")["_DATA"].GameFinished.Value == true
+
+        while true do
+            task.wait(0.3)
+            sell()
+            task.wait(0.3)
+            webhook()
+            task.wait(0.3)
+            teleport()
+            task.wait(5)
+        end
+    end
+end
