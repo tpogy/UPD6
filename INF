@@ -46,7 +46,7 @@ end
 local function Create() -- Creates the map
     local args = {
         [1] = "_lobbytemplategreen6",
-        [2] = "magnolia_infinite",
+        [2] = "jjk_infinite",
         [3] = true,
         [4] = "Hard"
     }
