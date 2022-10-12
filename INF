@@ -132,6 +132,34 @@ local function placenamek()
         }
         game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
         task.wait(1)
+        
+        local args = {
+            [1] = getgenv().id8,
+            [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id8,
+            [2] = CFrame.new(-2948.78027, 91.80620574951172, -700.842041) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id8,
+            [2] = CFrame.new(-2948.72803, 91.80620574951172, -703.189758) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id8,
+            [2] = CFrame.new(-2948.80151, 91.80620574951172, -705.302307) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
     end
 end
 
