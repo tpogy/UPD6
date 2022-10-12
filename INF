@@ -401,7 +401,7 @@ local function webhook()
 end
 
 if game.PlaceId == 8304191830 then
-    if game.Players.LocalPlayer.Name == getgenv().farmgems1 then
+    if game.Players.LocalPlayer.Name == getgenv().farmgems1 or game.Players.LocalPlayer.Name == getgenv().farmgems2 then
         while true do
             task.wait(5)
             joinnamek()
@@ -431,7 +431,7 @@ elseif game.PlaceId == 8349889591 then
     task.wait(15) -- Waits for the game remotes to load (This is needed)
     game.Players.LocalPlayer.PlayerGui.MessageGui.Enabled = false -- Removes the annoying error messages
 
-    if game.Players.LocalPlayer.Name == getgenv().farmgems1 then
+    if game.Players.LocalPlayer.Name == getgenv().farmgems1 or game.Players.LocalPlayer.Name == getgenv().farmgems2 then
         while true do
             task.wait()
             diseff()
