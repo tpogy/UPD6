@@ -401,7 +401,11 @@ function follow()
     end
 
     if checkplr == nil then
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, "a510f34e-5316-44d5-930c-b464e9bd32c1" ,plr)
+        game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            "a510f34e-5316-44d5-930c-b464e9bd32c1",
+            plr
+        )
     end
 end
 
@@ -487,17 +491,33 @@ if game.PlaceId == 8304191830 then
         game.Players.LocalPlayer.Name == getgenv().wait1 or game.Players.LocalPlayer.Name == getgenv().wait2 or
             game.Players.LocalPlayer.Name == getgenv().wait3
      then
-        follow()
-        print(checkplr)
-        if checkplr == true then
+        local wait1s, wait2s, wait3s = nil
+        while true do
             task.wait(5)
-            task.wait(1)
-            join()
-            task.wait(1)
-            Create()
-            task.wait(1)
-            start2()
-            task.wait(1)
+            follow()
+            print(checkplr)
+
+            for i, v in next, game:GetService("Players"):GetChildren() do
+                if v.Name == getgenv().wait1 then
+                    wait1s = true
+                end
+                if v.Name == getgenv().wait2 then
+                    wait2s = true
+                end
+                if v.Name == getgenv().wait3 then
+                    wait3s = true
+                end
+            end
+            if checkplr == true and wait1s == true and wait2s == true and wait3s == true then
+                task.wait(5)
+                task.wait(1)
+                join()
+                task.wait(1)
+                Create()
+                task.wait(1)
+                start2()
+                task.wait(1)
+            end
         end
     end
 
