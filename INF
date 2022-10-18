@@ -447,6 +447,7 @@ if game.PlaceId == 8304191830 then
     if game.Players.LocalPlayer.Name == getgenv().main then
         local wait1s, wait2s, wait3s = nil
         while true do
+            task.wait(1)
             for i, v in next, game:GetService("Players"):GetChildren() do
                 if v.Name == getgenv().wait1 then
                     wait1s = true
