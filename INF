@@ -401,11 +401,7 @@ function follow()
     end
 
     if checkplr == nil then
-        game:GetService("TeleportService"):TeleportToPlaceInstance(
-            game.PlaceId,
-            "a510f34e-5316-44d5-930c-b464e9bd32c1",
-            plr
-        )
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, "a510f34e-5316-44d5-930c-b464e9bd32c1" ,plr)
     end
 end
 
@@ -463,8 +459,8 @@ if game.PlaceId == 8304191830 then
                     wait3s = true
                 end
             end
-
-            if wait1s == false and wait2s == false and wait3s == false then
+            print(wait1s,wait2s,wait3s)
+            if wait1s == nil and wait2s == nil and wait3s == nil then
                 task.wait(3)
                 local plr = game:GetService("Players").LocalPlayer
                 game:GetService("TeleportService"):TeleportToPlaceInstance(
