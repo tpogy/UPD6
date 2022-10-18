@@ -132,7 +132,7 @@ local function placenamek()
         }
         game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
         task.wait(1)
-        
+
         local args = {
             [1] = getgenv().id8,
             [2] = CFrame.new(-2949.064453125, 91.80620574951172, -698.9860229492188) * CFrame.Angles(0, -0, -0)
@@ -390,6 +390,21 @@ local function teleport()
     end
 end
 
+local checkplr = nil
+function follow()
+    local plr = game:GetService("Players").LocalPlayer
+
+    for i, v in next, game:GetService("Players"):GetChildren() do
+        if v.Name == "GoDzBuLLeT" then
+            checkplr = true
+        end
+    end
+
+    if checkplr == nil then
+        game:GetService("TeleportService"):Teleport(game.PlaceId, plr)
+    end
+end
+
 local function webhook()
     if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
         task.wait(6)
@@ -429,6 +444,51 @@ local function webhook()
 end
 
 if game.PlaceId == 8304191830 then
+    if game.Players.LocalPlayer.Name == getgenv().main then
+        local wait1s, wait2s, wait3s = nil
+        while true do
+            for i, v in next, game:GetService("Players"):GetChildren() do
+                if v.Name == getgenv().wait1 then
+                    wait1s = true
+                end
+                if v.Name == getgenv().wait2 then
+                    wait2s = true
+                end
+                if v.Name == getgenv().wait3 then
+                    wait3s = true
+                end
+            end
+
+            if wait1s == true and wait2s == true and wait3s == true then
+                task.wait(5)
+                task.wait(1)
+                join()
+                task.wait(1)
+                Create()
+                task.wait(1)
+                start2()
+                task.wait(1)
+            end
+        end
+    end
+
+    if
+        game.Players.LocalPlayer.Name == getgenv().wait1 or game.Players.LocalPlayer.Name == getgenv().wait2 or
+            game.Players.LocalPlayer.Name == getgenv().wait3
+     then
+        follow()
+        if checkplr == true then
+            task.wait(5)
+            task.wait(1)
+            join()
+            task.wait(1)
+            Create()
+            task.wait(1)
+            start2()
+            task.wait(1)
+        end
+    end
+
     if game.Players.LocalPlayer.Name == getgenv().farmgems1 or game.Players.LocalPlayer.Name == getgenv().farmgems2 then
         while true do
             task.wait(5)
