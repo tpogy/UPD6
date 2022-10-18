@@ -401,7 +401,7 @@ function follow()
     end
 
     if checkplr == nil then
-        game:GetService("TeleportService"):Teleport(game.PlaceId, plr)
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, "a510f34e-5316-44d5-930c-b464e9bd32c1" ,plr)
     end
 end
 
