@@ -460,6 +460,16 @@ if game.PlaceId == 8304191830 then
                 end
             end
 
+            if wait1s == false and wait2s == false and wait3s == false then
+                task.wait(3)
+                local plr = game:GetService("Players").LocalPlayer
+                game:GetService("TeleportService"):TeleportToPlaceInstance(
+                    game.PlaceId,
+                    "a510f34e-5316-44d5-930c-b464e9bd32c1",
+                    plr
+                )
+            end
+
             if wait1s == true and wait2s == true and wait3s == true then
                 task.wait(5)
                 task.wait(1)
@@ -478,6 +488,7 @@ if game.PlaceId == 8304191830 then
             game.Players.LocalPlayer.Name == getgenv().wait3
      then
         follow()
+        print(checkplr)
         if checkplr == true then
             task.wait(5)
             task.wait(1)
