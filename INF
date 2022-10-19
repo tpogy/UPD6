@@ -403,7 +403,7 @@ function follow()
     if checkplr == nil then
         game:GetService("TeleportService"):TeleportToPlaceInstance(
             game.PlaceId,
-            "a510f34e-5316-44d5-930c-b464e9bd32c1",
+            getgenv().Job,
             plr
         )
     end
@@ -468,7 +468,7 @@ if game.PlaceId == 8304191830 then
                 local plr = game:GetService("Players").LocalPlayer
                 game:GetService("TeleportService"):TeleportToPlaceInstance(
                     game.PlaceId,
-                    "a510f34e-5316-44d5-930c-b464e9bd32c1",
+                    getgenv().Job,
                     plr
                 )
             end
