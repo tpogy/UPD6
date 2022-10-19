@@ -485,7 +485,7 @@ if game.PlaceId == 8304191830 then
             end
 
             if wait1s == true and wait2s == true and wait3s == true then
-                task.wait(5)
+                task.wait(30)
                 task.wait(1)
                 join()
                 task.wait(1)
@@ -518,7 +518,7 @@ if game.PlaceId == 8304191830 then
                 end
             end
             if checkplr == true and wait1s == true and wait2s == true and wait3s == true then
-                task.wait(5)
+                task.wait(30)
                 task.wait(1)
                 join()
                 task.wait(1)
