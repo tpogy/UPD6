@@ -561,7 +561,8 @@ elseif game.PlaceId == 8349889591 then
         end
     else
         while true do
-            task.wait()
+            task.wait(3)
+            follow()
             diseff()
             start()
             place()
