@@ -35,6 +35,29 @@ local function join() -- join teleporter
     game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
 end
 
+local function rejoininf()
+    local wait1s, wait2s, wait3s = nil
+    for i, v in next, game:GetService("Players"):GetChildren() do
+        if v.Name == getgenv().wait1 then
+            wait1s = true
+        end
+        if v.Name == getgenv().wait2 then
+            wait2s = true
+        end
+        if v.Name == getgenv().wait3 then
+            wait3s = true
+        end
+    end
+    if wait1s == nil or wait2s == nil or wait3s == nil then
+        local plr = game:GetService("Players").LocalPlayer
+        game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            getgenv().Job,
+            plr
+        )
+    end
+end
+
 local function joinnamek() -- join teleporter
     local args = {
         [1] = "_lobbytemplategreen7"
@@ -562,7 +585,7 @@ elseif game.PlaceId == 8349889591 then
     else
         while true do
             task.wait(3)
-            
+            rejoininf()
             diseff()
             start()
             place()
