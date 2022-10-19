@@ -578,7 +578,7 @@ elseif game.PlaceId == 8349889591 then
             place()
             upgradefarm()
             teleport()
-            if game.Players.LocalPlayer["_stats"].resource.Value >= 6000 then
+            if game.Players.LocalPlayer["_stats"].resource.Value >= 8000 then
                 break
             end
         end
