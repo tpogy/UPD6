@@ -50,11 +50,7 @@ local function rejoininf()
     end
     if wait1s == nil or wait2s == nil or wait3s == nil then
         local plr = game:GetService("Players").LocalPlayer
-        game:GetService("TeleportService"):TeleportToPlaceInstance(
-            game.PlaceId,
-            getgenv().Job,
-            plr
-        )
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, getgenv().Job, plr)
     end
 end
 
@@ -424,11 +420,7 @@ function follow()
     end
 
     if checkplr == nil then
-        game:GetService("TeleportService"):TeleportToPlaceInstance(
-            game.PlaceId,
-            getgenv().Job,
-            plr
-        )
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, getgenv().Job, plr)
     end
 end
 
@@ -489,11 +481,7 @@ if game.PlaceId == 8304191830 then
             print(wait1s, wait2s, wait3s)
             if wait1s == nil and wait2s == nil and wait3s == nil then
                 local plr = game:GetService("Players").LocalPlayer
-                game:GetService("TeleportService"):TeleportToPlaceInstance(
-                    game.PlaceId,
-                    getgenv().Job,
-                    plr
-                )
+                game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, getgenv().Job, plr)
             end
 
             if wait1s == true and wait2s == true and wait3s == true then
