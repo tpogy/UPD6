@@ -572,14 +572,14 @@ elseif game.PlaceId == 8349889591 then
         end
     else
         while true do
-            task.wait(3)
+            task.wait(1)
             rejoininf()
             diseff()
             start()
             place()
             upgradefarm()
             teleport()
-            if game.Players.LocalPlayer["_stats"].resource.Value >= 8000 then
+            if game.Players.LocalPlayer["_stats"].resource.Value >= 6000 then
                 break
             end
         end
