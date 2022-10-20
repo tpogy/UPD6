@@ -571,6 +571,7 @@ elseif game.PlaceId == 8349889591 then
             teleport()
         end
     else
+        print("Ready!")
         while true do
             task.wait()
             diseff()
