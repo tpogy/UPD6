@@ -237,6 +237,13 @@ local function place()
         task.wait(1)
 
         local args = {
+            [1] = getgenv().id3,
+            [2] = CFrame.new(379.107727, 121.93, -98.026985) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
             [1] = getgenv().id4,
             [2] = CFrame.new(364.450714, 121.93, -87.7618484) * CFrame.Angles(0, -0, -0)
         }
@@ -253,6 +260,13 @@ local function place()
         local args = {
             [1] = getgenv().id4,
             [2] = CFrame.new(364.444702, 121.93, -82.6162415) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id4,
+            [2] = CFrame.new(364.444702, 121.93, -79.6162415) * CFrame.Angles(0, -0, -0)
         }
         game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
         task.wait(1)
@@ -279,6 +293,13 @@ local function place()
         task.wait(1)
 
         local args = {
+            [1] = getgenv().id5,
+            [2] = CFrame.new(358.253754, 121.93, -78.8578415) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
             [1] = getgenv().id6,
             [2] = CFrame.new(365.411835, 121.93, -93.0482941) * CFrame.Angles(0, -0, -0)
         }
@@ -295,6 +316,13 @@ local function place()
         local args = {
             [1] = getgenv().id6,
             [2] = CFrame.new(359.396118, 121.93, -93.3139343) * CFrame.Angles(0, -0, -0)
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+        task.wait(1)
+
+        local args = {
+            [1] = getgenv().id6,
+            [2] = CFrame.new(359.009705, 121.93, -90.4285812) * CFrame.Angles(0, -0, -0)
         }
         game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
         task.wait(1)
