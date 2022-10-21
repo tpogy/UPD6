@@ -492,6 +492,7 @@ end
 
 if game.PlaceId == 8304191830 then
     if game.Players.LocalPlayer.Name == getgenv().main then
+        buymerchant()
         local wait1s, wait2s, wait3s = nil
         while true do
             task.wait(7)
